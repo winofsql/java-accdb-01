@@ -20,13 +20,12 @@ public class Main {
         try {
             targetFile = new File((new File(".").getCanonicalPath()));
         } catch (IOException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
 
         try {
-            // MySQL Connector/J 接続
-            conn = (Connection) DriverManager.getConnection( "jdbc:ucanaccess://" + targetFile.toString() + "\\hanbaic.accdb" );
+            // 接続
+            conn = (Connection) DriverManager.getConnection( "jdbc:ucanaccess://" + targetFile.toString() + "\\hanbaic.mdb" );
 
             // ステートメント
             stmt = (Statement) conn.createStatement();
@@ -54,7 +53,7 @@ public class Main {
                 // 全ての列に対するデータの出力
                 for( int i = 1; i <= columnCount; i++) {
 
-                    if ( rsmd.getColumnTypeName(i).equals("DATETIME") ) {
+                    if ( rsmd.getColumnTypeName(i).equals("TIMESTAMP") ) {
                         System.out.println(sdf.format(rs.getDate(i)));
                     }
                     else {
