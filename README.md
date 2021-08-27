@@ -1,5 +1,5 @@
 # java-accdb-01
-UCanAccess で accdb にアクセス
+UCanAccess で accdb にアクセス( mdb も OK )
 
 [UCanAccess](http://ucanaccess.sourceforge.net/site.html)
 
